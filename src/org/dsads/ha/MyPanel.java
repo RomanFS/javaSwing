@@ -6,10 +6,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 class MyPanel extends JPanel implements ActionListener {
-    private final Timer timer = new Timer(1000, this);
-    Snake snake = new Snake(getPreferredSize().width / 2, getPreferredSize().height / 2);
+    private final Timer timer = new Timer(600, this);
+    private final Snake snake;
 
     public MyPanel() {
+        this.snake = new Snake(getPreferredSize().width / 2, getPreferredSize().height / 2);
+
+        BasicKeyAdapter keyAdapter = new BasicKeyAdapter(snake);
+        this.addKeyListener(keyAdapter);
+        this.setFocusable(true);
+
         timer.start();
     }
 
