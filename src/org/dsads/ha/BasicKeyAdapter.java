@@ -17,17 +17,21 @@ public class BasicKeyAdapter extends KeyAdapter {
         Snake.Direction direction = snake.getDirection();
 
         switch (key) {
-            case 65: snake.setDirection(direction.left()); // left
+            case 65:
             case 37:
+                snake.setDirection(direction.left());
                 break;
-            case 87: // up
+            case 87:
             case 38:
+                snake.setDirection(direction.up());
                 break;
-            case 68:  // right
+            case 68:
             case 39:
+                snake.setDirection(direction.right());
                 break;
-            case 83:  // down
+            case 83:
             case 40:
+                snake.setDirection(direction.down());
                 break;
             default:
                 System.out.println(e.getKeyCode());

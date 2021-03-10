@@ -29,22 +29,34 @@ class Snake {
         }
 
         public Direction up() {
-            // change x and y here
+            if (y != 1) {
+                x = 0;
+                y = -1;
+            }
             return this;
         }
 
         public Direction down() {
-            // change x and y here
+            if (y != -1) {
+                x = 0;
+                y = 1;
+            }
             return this;
         }
 
         public Direction left() {
-            // change x and y here
+            if (x != 1) {
+                x = -1;
+                y = 0;
+            }
             return this;
         }
 
         public Direction right() {
-            // change x and y here
+            if (x != -1) {
+                x = 1;
+                y = 0;
+            }
             return this;
         }
     }
